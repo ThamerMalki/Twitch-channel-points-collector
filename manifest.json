@@ -1,0 +1,26 @@
+{
+    "manifest_version": 2,
+    "name": "Twitch cp collector",
+    "version": "1.0",
+    "description": "Collect your favorite's twitch streamer channel points while enjoying the stream",
+    "permissions": ["tabs","storage"],
+    "host_permissions": ["https://*.twitch.tv/*"],
+    "background": {
+        "scripts": ["background.js"]
+      },
+    "content_scripts": [
+        {
+            "matches": ["https://*.twitch.tv/*"],
+            "js": ["content.js"]
+        }
+    ],
+    "browserAction": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "points-icon.jpg",
+            "24": "points-icon.jpg",
+            "32": "points-icon.jpg"
+        },
+        "default_title": "cp collector"
+      }
+  }
